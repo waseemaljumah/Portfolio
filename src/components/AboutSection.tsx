@@ -76,7 +76,7 @@ const AboutSection = () => {
               <div className="w-72 h-72 md:w-80 md:h-80 rounded-2xl bg-gradient-to-br from-primary to-accent p-1 rotate-0 group-hover:-rotate-3 transition-transform duration-500">
                 <div className="w-full h-full rounded-2xl bg-muted overflow-hidden group-hover:scale-105 transition-transform duration-500">
                   <img
-                    src="/public/myPic.jpg"
+                    src="/myPic.jpg"
                     alt="My Photo"
                     className="w-full h-full object-cover object-top rounded-2xl"
                   />
@@ -125,7 +125,7 @@ const AboutSection = () => {
             {/* CV Buttons */}
             <div className="flex flex-wrap gap-4 mt-6">
               <a
-                href="/public/enCV.pdf"
+                href="/enCV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full font-semibold btn-hover ripple transition-all duration-300 hover:scale-105 hover:shadow-lg"
@@ -135,7 +135,7 @@ const AboutSection = () => {
               </a>
 
               <a
-                href="/public/arCV.pdf"
+                href="/arCV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-full font-semibold btn-hover ripple transition-all duration-300 hover:scale-105 hover:shadow-lg"
