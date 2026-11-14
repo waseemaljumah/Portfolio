@@ -15,12 +15,47 @@
 <meta property="og:url" content="https://waseemaljumah.github.io/Portfolio" />
 <meta property="og:image" content="https://waseemaljumah.github.io/Portfolio/portfolio.png" />
 
-    <link rel="website icon" type="image/png" href="https://waseemaljumah.github.io/Portfolio/code2.png" />
+    <link rel="icon" type="image/png" href="/Portfolio/code2.png" />
 
 
     <!-- <link rel="canonical" href="https://waseemaljumah.dev" /> -->
-    <script type="module" crossorigin src="/Portfolio/assets/index-BaXc51sp.js"></script>
-    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-B4r_uHN7.css">
+
+    <link rel="preconnect" href="https://firestore.googleapis.com" crossorigin />
+
+    <!--
+      يطبّق ألوانك والوضع الداكن قبل ظهور الصفحة (بدون وميض للألوان الأصلية).
+      في أول زيارة (ما فيه نسخة محفوظة في المتصفح) تبقى الصفحة مخفية لين يوصل المحتوى من Firebase.
+    -->
+    <style>
+      html.content-pending body { opacity: 0; }
+      body { transition: opacity 0.2s ease; }
+    </style>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        try {
+          var saved = localStorage.getItem("theme");
+          if (saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+            root.classList.add("dark");
+          }
+          var css = localStorage.getItem("portfolio_theme_css");
+          if (css) {
+            var s = document.createElement("style");
+            s.id = "custom-theme";
+            s.textContent = css;
+            document.head.appendChild(s);
+          }
+          if (!localStorage.getItem("portfolio_content_cache_v1")) root.classList.add("content-pending");
+        } catch (e) {
+          root.classList.add("content-pending");
+        }
+        // أمان: لا تبقى الصفحة مخفية أكثر من 4 ثواني مهما صار
+        setTimeout(function () { root.classList.remove("content-pending"); }, 4000);
+      })();
+    </script>
+    <script type="module" crossorigin src="/Portfolio/assets/index-DG1M-jJu.js"></script>
+    <link rel="modulepreload" crossorigin href="/Portfolio/assets/react-VG02EONJ.js">
+    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-D_p837zw.css">
   </head>
 
   <body>
